@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 270 50% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 50% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 50% 10%;
+    --primary: 270 70% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 30% 90%;
+    --secondary-foreground: 270 50% 20%;
+    --muted: 270 20% 90%;
+    --muted-foreground: 270 30% 40%;
+    --accent: 270 40% 90%;
+    --accent-foreground: 270 50% 20%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 20% 85%;
+    --input: 270 20% 85%;
+    --ring: 270 70% 50%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 270 30% 10%;
+    --foreground: 0 0% 98%;
+    --card: 270 30% 13%;
+    --card-foreground: 0 0% 98%;
+    --popover: 270 30% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 270 70% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 30% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 270 30% 20%;
+    --muted-foreground: 270 20% 70%;
+    --accent: 270 30% 25%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 30% 25%;
+    --input: 270 30% 25%;
+    --ring: 270 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+/* Animation classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceSlight {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes pulseSlight {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fade-in-delay-1 {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.3s forwards;
+}
+
+.animate-fade-in-delay-2 {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.6s forwards;
+}
+
+.animate-slide-up-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-slide-up-on-scroll-delay-1 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease-out 0.2s forwards;
+}
+
+.animate-slide-up-on-scroll-delay-2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease-out 0.4s forwards;
+}
+
+.animate-slide-up-on-scroll-delay-3 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease-out 0.6s forwards;
+}
+
+.animate-slide-up-on-scroll-delay-4 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease-out 0.8s forwards;
+}
+
+.animate-bounce-subtle {
+  animation: bounceSlight 2s infinite ease-in-out;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSlight 3s infinite ease-in-out;
+}
+
+/* YouTube video responsive container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px -5px rgba(124, 58, 237, 0.3);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
